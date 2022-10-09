@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +6,5 @@ import { Component, EventEmitter, Output, ElementRef } from '@angular/core';
   styleUrls: ['./Header.component.css'],
 })
 export class AppHeader {
-  @Output() theSowingSection = new EventEmitter<boolean>();
   constructor() {}
-  onSelectedSection(value: boolean) {
-    this.theSowingSection.emit(value);
-  }
 }

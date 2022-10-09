@@ -1,5 +1,10 @@
 <!-- *ngFor="let recipe of recipes -->
-<a href="#" class="list-group-item clearfix" (click)="onSelected()">
+<a
+  style="cursor: pointer"
+  routerLinkActive="active"
+  class="list-group-item clearfix"
+  [routerLink]="index"
+>
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{ recipeDate.name }}</h4>
     <p class="list-group-item-text">{{ recipeDate.description }}</p>

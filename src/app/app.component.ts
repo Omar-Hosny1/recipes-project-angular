@@ -5,9 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  isRecipeSection: boolean = true;
-  toggleSections(seciton: boolean) {
-    this.isRecipeSection = seciton;
-  }
-}
+export class AppComponent {}
