@@ -1,23 +1,26 @@
 <div class="row">
   <div class="col-xs-12 col-md-6 col-md-offset-3">
     <div class="alert alert-danger" *ngIf="error">
-      {{ error }}
+      <p>{{ error }}</p>
     </div>
-    <form #authForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+    <div *ngIf="isLoading" style="text-align: center">
+      <app-spinner></app-spinner>
+    </div>
+    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
       <div class="form-group">
-        <label for="email">Email</label>
+        <label for="email">E-Mail</label>
         <input
           type="email"
           id="email"
-          required
-          email
+          class="form-control"
           ngModel
           name="email"
-          class="form-control"
+          required
+          email
         />
       </div>
       <div class="form-group">
-        <label for="password" required>Password</label>
+        <label for="password">Password</label>
         <input
           type="password"
           id="password"
@@ -37,13 +40,10 @@
           {{ isLoginMode ? "Login" : "Sign Up" }}
         </button>
         |
-        <button class="btn btn-primary" type="button" (click)="onSwitchMode()">
-          Switch To {{ isLoginMode ? "Sign Up" : "Log in" }}
+        <button class="btn btn-primary" (click)="onSwitchMode()" type="button">
+          Switch to {{ isLoginMode ? "Sign Up" : "Login" }}
         </button>
       </div>
     </form>
-    <div *ngIf="isLoading" style="text-align: center">
-      <app-loading-spinner></app-loading-spinner>
-    </div>
   </div>
 </div>
