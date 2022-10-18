@@ -13,19 +13,18 @@ import { AuthInterceptorService } from './auth/auth-interceptors.service';
 import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingModule } from './shopping-list/shopping.module';
 import { SharedModule } from './shared/shared.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
     // To Use The Components, Pipes, Directives etc..
     AppComponent,
     HeaderComponent,
-    AuthComponent,
   ],
   imports: [
     // imports other modules (split your app into small modules)
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
+    AuthModule,
     HttpClientModule,
     AppRoutingModule,
     RecipesModule,
