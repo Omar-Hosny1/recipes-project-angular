@@ -15,7 +15,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     FormsModule,
     SharedModule,
-    CommonModule,
+    SharedModule,
   ],
 })
 export class ShoppingModule {}
