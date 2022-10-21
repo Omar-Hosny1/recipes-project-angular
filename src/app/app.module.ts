@@ -10,6 +10,8 @@ import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingModule } from './shopping-list/shopping.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
+import { StoreModule } from '@ngrx/store';
+import { ShoppingListReducer } from './shopping-list/store/shopping-list.reducer';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { AuthModule } from './auth/auth.module';
     RecipesModule,
     ShoppingModule,
     SharedModule,
+    StoreModule.forRoot({ shoppingList: ShoppingListReducer }),
   ],
   providers: [
     // for services
